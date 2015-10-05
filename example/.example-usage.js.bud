@@ -1,0 +1,56 @@
+/**
+ * Bud file for example usage.
+ */
+
+"use strict";
+
+var chopcal = require('../lib'),
+    util = require('util');
+
+module.exports = {
+    force: true,
+    mode: '444',
+    data: {
+        get examples() {
+            return [
+                [
+                    'ceil',
+                    'floor',
+                    'round'
+                ].map(function (name) {
+                        var func = chopcal[name];
+                        return {
+                            name: name,
+                            values: [
+                                [14, 10],
+                                [16, 10],
+                                [0.23, 0.1],
+                                [0.27, 0.1]
+                            ].map(function (args) {
+                                    return _calc(func, args);
+                                })
+                        }
+                    })
+            ].reduce(function (a, b) {
+                    return [].concat(a).concat(b);
+                })
+
+        }
+    }
+};
+
+function _calc(func, args) {
+    return {
+        args: args.map(function (val) {
+            if (Array.isArray(val)) {
+                return util.format('[%s]', val.join(', '));
+            }
+            return val;
+        }).join(', '),
+        result: func.apply(func, args)
+    }
+}
+
+if (!module.parent) {
+    require('coz').render(__filename);
+}

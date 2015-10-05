@@ -1,0 +1,11 @@
+var chopcal = require('chopcal');
+
+{{#each examples}}
+//------------------------
+// {{name}}
+//------------------------
+{{#each values}}
+console.log(chopcal.{{../name}}({{{args}}})); //-> {{result}}
+{{/each}}
+
+{{/each}}
