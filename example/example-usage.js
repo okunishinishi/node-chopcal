@@ -1,4 +1,6 @@
-var chopcal = require('chopcal');
+"use strict";
+
+const chopcal = require('chopcal');
 
 //------------------------
 // ceil

@@ -1,22 +1,16 @@
 /**
  * Test case for floor.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
+"use strict";
 
-var floor = require('../lib/floor.js');
+const floor = require('../lib/floor.js'),
+    assert = require('assert');
 
-exports.setUp = function(done) {
+it('Floor', (done) => {
+    assert.equal(floor(12, 10), 10);
+    assert.equal(floor(10, 10), 10);
+    assert.equal(floor(0.21, 0.1), 0.2);
     done();
-};
-
-exports.tearDown = function(done) {
-    done();
-};
-
-exports['Floor'] = function(test){
-    test.equal(floor(12, 10), 10);
-    test.equal(floor(10, 10), 10);
-    test.equal(floor(0.21, 0.1), 0.2);
-    test.done();
-};
+});
 

@@ -1,22 +1,17 @@
 /**
  * Test case for ceil.
- * Runs with nodeunit.
+ * Runs with mocha.
  */
+"use strict";
 
-var ceil = require('../lib/ceil.js');
+const ceil = require('../lib/ceil.js'),
+    assert = require('assert');
 
-exports.setUp = function (done) {
+
+it('Ceil', (done) => {
+    assert.equal(ceil(12, 10), 20);
+    assert.equal(ceil(10, 10), 10);
+    assert.equal(ceil(0.21, 0.1), 0.3);
     done();
-};
-
-exports.tearDown = function (done) {
-    done();
-};
-
-exports['Ceil'] = function (test) {
-    test.equal(ceil(12, 10), 20);
-    test.equal(ceil(10, 10), 10);
-    test.equal(ceil(0.21, 0.1), 0.3);
-    test.done();
-};
+});
 

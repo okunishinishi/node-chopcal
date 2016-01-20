@@ -4,7 +4,7 @@
 
 "use strict";
 
-var chopcal = require('../lib'),
+const chopcal = require('../lib'),
     util = require('util');
 
 module.exports = {
@@ -17,23 +17,19 @@ module.exports = {
                     'ceil',
                     'floor',
                     'round'
-                ].map(function (name) {
-                        var func = chopcal[name];
-                        return {
-                            name: name,
-                            values: [
-                                [14, 10],
-                                [16, 10],
-                                [0.23, 0.1],
-                                [0.27, 0.1]
-                            ].map(function (args) {
-                                    return _calc(func, args);
-                                })
-                        }
-                    })
-            ].reduce(function (a, b) {
-                    return [].concat(a).concat(b);
+                ].map((name) => {
+                    let func = chopcal[name];
+                    return {
+                        name: name,
+                        values: [
+                            [14, 10],
+                            [16, 10],
+                            [0.23, 0.1],
+                            [0.27, 0.1]
+                        ].map((args) => _calc(func, args))
+                    }
                 })
+            ].reduce((a, b) => [].concat(a).concat(b))
 
         }
     }
@@ -41,7 +37,7 @@ module.exports = {
 
 function _calc(func, args) {
     return {
-        args: args.map(function (val) {
+        args: args.map((val) => {
             if (Array.isArray(val)) {
                 return util.format('[%s]', val.join(', '));
             }
