@@ -1,6 +1,6 @@
 {
   "name": "chopcal",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Chop numbers.",
   "main": "lib",
   "browser": "shim/browser",
@@ -25,8 +25,7 @@
   },
   "homepage": "https://github.com/okunishinishi/node-chopcal#readme",
   "dependencies": {
-    "argx": "^3.0.0",
-    "async": "^2.0.1"
+    "argx": "^3.0.0"
   },
   "devDependencies": {
     "ababel": "^1.0.25",
