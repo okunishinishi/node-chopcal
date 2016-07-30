@@ -1,13 +1,13 @@
 "use strict";
 
-const chopcal = require('chopcal');
+const chopcal = require('chopcal')
 
 {{#each examples}}
 //------------------------
 // {{name}}
 //------------------------
 {{#each values}}
-console.log(chopcal.{{../name}}({{{args}}})); //-> {{result}}
+console.log(chopcal.{{../name}}({{{args}}})) //-> {{result}}
 {{/each}}
 
 {{/each}}

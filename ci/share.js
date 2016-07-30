@@ -4,15 +4,15 @@
  * Share this project.
  */
 
-"use strict";
+'use strict'
 
-process.chdir(__dirname + '/..');
+process.chdir(__dirname + '/..')
 
 var apeTasking = require('ape-tasking'),
-    sharegit = require('sharegit');
+    sharegit = require('sharegit')
 
 apeTasking.runTasks('share', [
     function (callback) {
-        sharegit(callback);
+        sharegit(callback)
     }
-], true);
+], true)
