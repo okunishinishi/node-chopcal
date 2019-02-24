@@ -108,7 +108,7 @@ console.log(chopcal.round(0.27, 0.1)) //-> 0.3
 
 <!-- Section from "doc/guides/03.API.md.hbs" Start -->
 
-<a name="section-doc-guides-03-a-p-i-md"></a>
+<a name="section-doc-guides-03-api-md"></a>
 
 API
 ---
